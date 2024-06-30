@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yinka Enoch Adedokun">
+    <meta name="description" content="Página simple de recuperación de contraseña utilizando HTML y CSS">
+    <meta name="keywords" content="página de recuperación de contraseña, html básico y css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='forgot_account.css') }}">
+    <title>Forgot Password Page - HTML + CSS</title>
+    <!-- Agregamos SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <form action="/send_verification" method="post" id="verification-form">
+        <label for="email_input">POR FAVOR INGRESE SU CORREO ELECTRÓNICO:</label>
+        <input type="email" id="email_input" name="user_input" placeholder="Correo electrónico (Gmail o Outlook)..." required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|outlook\.com)">
+        <!-- Validamos que solo se ingrese un correo electrónico válido de Gmail o Outlook -->
+        
+        <input type="submit" value="Enviar código">
+    </form>
+
+    <script>
+        // Obtener el formulario
+        const form = document.getElementById('verification-form');
+
+        // Escuchar el evento de envío del formulario
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evitar que se envíe el formulario
+
+            // Obtener el valor del correo electrónico ingresado
+            const emailInput = document.querySelector('#email_input').value;
+
+            // Validar el correo electrónico
+            if (emailInput.match(/[a-zA-Z0-9._%+-]+@(gmail\.com|outlook\.com)/)) {
+                // Mostrar mensaje de éxito con SweetAlert2
+                await Swal.fire({
+                    icon: 'success',
+                    title: 'CÓDIGO ENVIADO A SU CORREO',
+                    showConfirmButton: false,
+                    timer: 5000, // Duración del mensaje (5 segundos)
+                });
+
+                // Redirigir al usuario a la página principal
+                window.location.href = '/'; // Ruta raíz (index.html)
+            } else {
+                // Mostrar mensaje de error con SweetAlert2
+                await Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Por favor, ingrese un correo válido de Gmail o Outlook',
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

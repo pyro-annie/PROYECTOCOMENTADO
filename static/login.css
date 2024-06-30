@@ -1,0 +1,122 @@
+
+body {
+    background-color: hsl(216, 12%, 8%);
+    font-family: 'Overpass', sans-serif;
+}
+
+.container {
+    background-color: hsl(213, 19%, 18%);
+    width: 80%; /* Cambia a un porcentaje */
+    max-width: 400px; /* Establece un ancho máximo */
+    margin: 50px auto; /* Ajusta el margen vertical */
+    padding: 20px; /* Agrega un poco de espacio interno */
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+}
+.star{
+    display: flex;
+    width: 30px;
+    height: 35px;
+    background-color: hsl(213deg 18.33% 12%);
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 0px 20px;
+    border-radius: 100%;
+
+}
+.tittle{
+    color: white;
+    font-size: 24px;
+    text-align: start;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.Text-container{
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+    text-align: initial;
+    margin: 3px 10px 5px 20px;
+}
+.numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+.score-button{
+    background-color: hsl(213deg 21.72% 11.57%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;    
+    color: hsl(217, 12%, 63%);
+    border: none;
+}
+.score-button:hover{
+    background-color: gray;
+    color: white;
+}
+.button{
+    background-color:#03e9f4;
+    width: 288px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    font-weight: lighter;
+}
+
+.button:hover{
+    background-color: white;
+    color: #03e9f4;
+}
+.hidden-container{
+    display: none;
+    background-color:  hsl(213, 19%, 18%);
+    width: 330px;
+    height: 330px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 150px auto;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.icon-thankyou{
+    display: flex;
+    margin: auto;
+    margin-bottom: 50px;
+    position: relative;
+    bottom: -18px;
+}
+.text-naranja{
+    display: flex;
+    color: #03e9f4;
+    justify-content: center;
+    background-color: hsl(213deg 21.72% 11.57%);
+    height: 30px;
+    align-items: center;
+    width: 197px;
+    flex-wrap: nowrap;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: inherit;
+}
+.h2-tittle{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.p-hidden{
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+    text-align: center;
+}
